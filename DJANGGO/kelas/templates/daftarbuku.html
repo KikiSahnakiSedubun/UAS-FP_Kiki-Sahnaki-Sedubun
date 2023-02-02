@@ -1,0 +1,234 @@
+<link href="" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman | {{titel}}</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+      crossorigin="anonymous"
+    />
+    
+
+<style type="text/css">
+*{
+box-sizing: border-box;
+}
+body {
+font-family: Arial;
+padding: 10px; 
+background-image: url("' %}");
+}
+
+/* Header/Blog Title */
+
+.header { 
+padding: 20px;
+text-align: center; 
+color:#000000;
+background-image: url("{% static 'img/abc.jpg' %");
+
+}
+
+
+header h1 { font-size: 50px;
+
+}
+
+/* Style untuk navigation bar */
+
+.topnav {
+
+overflow: hidden; 
+background-color: rgb(68, 136, 182);
+}
+/* Style untuk link di Navbar*/
+
+.topnav a {
+
+float: left;
+
+display: block; color:#f2f2f2;
+
+text-align: center;
+
+padding: 14px 16px;
+
+text-decoration: none;
+
+/* merubah warna hover */
+}
+.topnav a:hover {
+
+background-color: rgb(255, 255, 255);
+
+color: black;
+}
+/* untuk mencreate 2 unequal kolom /
+
+/* Left column */
+
+.leftcolumn {
+
+float: left; 
+width: 50%;
+padding-left: 5px;
+border-radius: 50%;
+
+}
+
+/* Right column */
+
+.rightcolumn {
+
+float: right; 
+width: 50%;
+padding-left: 60px;
+border-radius: 50%;
+}
+/*Take Image */
+
+.fakeimg {
+
+background-color: #aaa;
+
+width: 100%;
+
+padding: 20px;
+}
+/* memberikan effect card pada konten */
+
+.card {
+
+background-color: white;
+
+padding: 20px;
+
+margin-top: 20px;
+}
+/* Clear floats setelah columns */
+
+.row:after {
+
+content: "";
+
+display : table;
+
+clear: both;
+}
+
+/*fooTer */
+
+.footer {
+
+padding: 20px;
+
+text-align: center;
+
+background:rgb(255, 255, 255);
+
+margin-top: 20px;
+}
+.p1{
+    height: 200px;
+    width: 200px;
+    border-radius: 200%;
+    margin-left: 10px;
+    margin-top: -10px;
+}
+.p3{
+    width: 100px;
+    height: 100px;
+}
+.ket{
+    margin-left: 200px;
+    margin-top: -50px;
+}
+.p4{
+    height: 200px;
+    width: 400px;
+    margin-left: 0px;
+    margin-top: -20px;
+
+/*Membuat responsible layout-ketika screen dibawah 800px maka membuat 2 kolon saling stack satu sama lain*/ 
+@media screen and (max-width: 800px) 
+.leftcolumn, .rightcolumn 
+{
+width: 100%;
+
+padding: 0;
+}
+}
+@media screen and (max-width: 400px) 
+{ .topnav a
+    {
+float: none;
+width: 100%;
+}
+}
+</style>
+</head>
+<body>
+    <section class="header">
+    <div class="header">
+        <h2>SELAMAT DATANG</h2>
+    </div>
+    
+<div class="topnav">
+    <a href="/">Home</a>
+    <a href="https://wa.me/6281388725755">Contact</a>
+    <a href="">About me</a>
+    <a href="/produk/">Produk</a>
+    <a href="/Vbrg/">Tabel</a>
+    <a href="/jenis/">Jenis</a>
+    <a href="/buku/">Buku</a>
+    <a href="/">Daftar Buku</a>
+    <a href="" style="float:right">logout</a>
+</div>
+
+<h2 class="align-center" align="center">Daftar Barang</h2>
+<p><a href="/adddaftarbuku" class="btn btn-primary">Tambah Data</a></p>
+{% for message in messages %}
+    {% if message %}
+        <div class="alert alert-success">{{ message }}</div>
+    {% endif %}
+{% endfor %}
+<table border="1" class="table table-striped" align="center">
+    <tr>
+        <th>Nama</th>
+        <th>Harga</th>
+    </tr>
+    
+{% for Daftarbuku in daftarbukus %}
+    <tr>
+        <td>{{ Daftarbuku.nama }}</td>
+        <td>{{ Daftarbuku.harga }}</td>
+    </tr>
+{% endfor %}
+</table>
+<br><br>
+
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+  crossorigin="anonymous"
+></script>
+
+
+<section class="footer">
+<div class="footer">
+
+<h2>Created By Kiki Sahnaki</h2>
+
+</div>
+</section>
+
+</body>
+
+</html>
+
